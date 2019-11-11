@@ -1,5 +1,13 @@
 
 <%= form_with scope: :kitten, url: yield(:url), method: yield(:method), local: true do |f| %>
+  <% if @kitten.errors.any? %>
+    <% @kitten.errors.full_messages.each do |e| %>
+      <ul>
+        <li><%= e %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br/>
