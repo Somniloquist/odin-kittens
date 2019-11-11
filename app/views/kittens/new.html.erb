@@ -1,1 +1,16 @@
 <h1>Kittens new</h1>
+<%= form_with model: Kitten.new, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <br/>
+  <%= f.label :cuteness %>
+  <%= f.number_field :cuteness, in: 1.0..10.0, step: 0.5 %>
+  <br/>
+  <%= f.label :softness %>
+  <%= f.number_field :softness, in: 1.0..10.0, step: 0.5 %>
+  <br/>
+  <%= f.submit "Create kitten" %>
+<% end %>
