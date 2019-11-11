@@ -20,6 +20,7 @@ class KittensController < ApplicationController
   end
 
   def edit
+    @kitten = Kitten.find(params[:id])
   end
 
   def update

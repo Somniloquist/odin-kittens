@@ -1,1 +1,7 @@
+<% provide(:url, kitten_path(@kitten)) %>
+<% provide(:button_text, "Update kitten") %>
+<% provide(:method, :patch) %>
+
 <h1>Kittens edit</h1>
+
+<%= render "form" %>
