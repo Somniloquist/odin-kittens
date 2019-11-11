@@ -24,6 +24,12 @@ class KittensController < ApplicationController
   end
 
   def update
+    @kitten = Kitten.find(params[:id])
+    if @kitten.update_attributes(kitten_params)
+      redirect_to @kitten
+    else
+      render :edit
+    end
   end
 
   def delete
